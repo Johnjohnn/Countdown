@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 html {
   box-sizing: border-box;
@@ -10,6 +10,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
+  font-family: 'Nunito', sans-serif;
 
 }
 
@@ -84,7 +85,7 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
-
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Button */
@@ -95,12 +96,14 @@ button {
   margin-top: 15px;
   border: none;
   text-transform: uppercase;
-  background: #006959;
+  background: #690069;
   color: white;
   cursor: pointer;
   outline: none;
 }
-
+button:hover {
+  filter: brightness(120%);
+}
 
 
 /* Countdown */
@@ -109,7 +112,7 @@ ul {
 }
 
 li {
-
+   display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -127,7 +130,29 @@ li span {
   position: relative;
   top: 60px;
 }
+.complete-title {
+  animation: complete 4s infinite;
+}
 
+@keyframes complete {
+  0%{
+    color:rgb(255, 17, 0);
+  }
+  25%{
+    color:rgb(217, 255, 0);
+  }
+  50%{
+    color: rgb(0, 255, 21);
+    transform: scale(1.5);
+  }
+  75%{
+    color:rgb(76, 0, 255);
+  }
+  100%{
+    color:rgb(255, 0, 119);
+  }
+
+}
 
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
