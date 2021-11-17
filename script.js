@@ -7,17 +7,19 @@ const countdownElTitle= document.getElementById("countdown-title");
 const countdownBtn = document.getElementById("countdown-button");
 const timeElments = document.querySelectorAll("span");
 
-letcountdownTitle = "";
+let countdownTitle = "";
 let countdownDate = "";
 let countdownValue = Date;
 
-const seconds =  1000;
-const minute = seconds * 60 ;
+const second =  1000;
+const minute = second* 60 ;
 const hour =  minute * 60 ;
 const day = hour * 24 ; 
 
 const days = Math.floor(distance/ day);
-const hours = Math.florr((distance % day))
+const hours = Math.florr((distance % day) / hour)
+const minutes = Math.florr((distance % hour) / minute)
+const seconds = Math.florr((distance % hour) / second)
 
 // Set Date Input Min with Todays's Date 
 const today = new Date().toISOString().split("T")[0];
