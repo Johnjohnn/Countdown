@@ -1,5 +1,5 @@
 const inputContainer = document.getElementById("input-container");
-const countdownForm = document.getElementById("countdownForm");
+const countdownForm = document.getElementById("countdown");
 const dateEl = document.getElementById("date-picker");
 
 const countdownEl = document.getElementById("countdown");
@@ -16,10 +16,6 @@ const minute = second* 60 ;
 const hour =  minute * 60 ;
 const day = hour * 24 ; 
 
-const days = Math.floor(distance/ day);
-const hours = Math.florr((distance % day) / hour)
-const minutes = Math.florr((distance % hour) / minute)
-const seconds = Math.florr((distance % hour) / second)
 
 // Set Date Input Min with Todays's Date 
 const today = new Date().toISOString().split("T")[0];
@@ -30,10 +26,13 @@ dateEl.setAttribute("min", today);
 function  updateDOM() {
     const now =  new Date().getTime();
     const distance =  countdownValue - now;
-    console.log("distance", distance)
+    console.log("distance", distance);
 
-    const days = math.floor(distance / day);
-    const hours = Math.floor((distance % day) / hour)
+ const days = Math.floor(distance/ day);
+const hours = Math.florr((distance % day) / hour)
+const minutes = Math.florr((distance % hour) / minute)
+const seconds = Math.florr((distance % hour) / second)
+
 }
 // Take Valudes from Input 
 function updateCountdown (e) {
@@ -52,4 +51,4 @@ function updateCountdown (e) {
 
 
 // Event Listener 
-countdownForm.addEventListener('submite', updateCountdown);
+countdownForm.addEventListener('submit', updateCountdown);
