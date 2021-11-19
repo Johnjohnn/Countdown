@@ -33,6 +33,19 @@ const hours = Math.florr((distance % day) / hour)
 const minutes = Math.florr((distance % hour) / minute)
 const seconds = Math.florr((distance % hour) / second)
 
+// Populate Countdown 
+countdownElTitle.textContent = `${countdownTitle}`;
+timeElments[0].textContent = `${days}`
+timeElments[0].textContent = `${hours}`
+timeElments[0].textContent = `${minutes}`
+timeElments[0].textContent = `${seconds}`
+
+// Hide Input 
+inputContainer.hidden= true;
+
+// Show countdown 
+countdownEl.hidden = false;
+
 }
 // Take Valudes from Input 
 function updateCountdown (e) {
