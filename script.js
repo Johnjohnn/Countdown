@@ -48,22 +48,18 @@ if (distance < 0) {
     countdownEl.hidden = true;
     clearInterval(countdownActive);
     completeElInfo.textContent = `${countdownTitle} finished on  ${countdownDate}`;
-    
-}
-
+    completeEl.hidden = false;
+}else {
 // Populate Countdown 
 countdownElTitle.textContent = `${countdownTitle}`;
-timeElments[0].textContent = `${days}`
-timeElments[1].textContent = `${hours}`
-timeElments[2].textContent = `${minutes}`
-timeElments[3].textContent = `${seconds}`
-
-
-
-// Show countdown 
+timeElments[0].textContent = `${days}`;
+timeElments[1].textContent = `${hours}`;
+timeElments[2].textContent = `${minutes}`;
+timeElments[3].textContent = `${seconds}`;
+completeEl.hidden = true;
 countdownEl.hidden = false;
 
-}, second);
+}
 
 }
 // Take Valudes from Input 
