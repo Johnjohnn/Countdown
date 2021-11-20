@@ -1,11 +1,15 @@
 const inputContainer = document.getElementById("input-container");
-const countdownForm = document.getElementById("countdown");
+const countdownForm = document.getElementById("countdownForm");
 const dateEl = document.getElementById("date-picker");
 
 const countdownEl = document.getElementById("countdown");
 const countdownElTitle= document.getElementById("countdown-title");
 const countdownBtn = document.getElementById("countdown-button");
 const timeElments = document.querySelectorAll("span");
+
+const completeEl = document.getElementById("complete");
+const completeElInfo = document.getElementById("complete-info");
+const completeBtn = document.getElementById("complete-button");
 
 let countdownTitle = "";
 let countdownDate = "";
@@ -30,10 +34,22 @@ countdownActive = setInterval( () => {
     const distance =  countdownValue - now;
     console.log("distance", distance);
 
- const days = Math.floor(distance/ day);
+ const days = Math.floor(distance / day);
 const hours = Math.florr((distance % day) / hour)
 const minutes = Math.florr((distance % hour) / minute)
 const seconds = Math.florr((distance % minute) / second)
+
+// Hide Input 
+inputContainer.hidden= true;
+
+
+// If the countdown ha ended , show complete 
+if (distance < 0) {
+    countdownEl.hidden = true;
+    clearInterval(countdownActive);
+    completeElInfo.textContent = `${countdownTitle} finished on  ${countdownDate}`;
+    
+}
 
 // Populate Countdown 
 countdownElTitle.textContent = `${countdownTitle}`;
@@ -42,8 +58,7 @@ timeElments[1].textContent = `${hours}`
 timeElments[2].textContent = `${minutes}`
 timeElments[3].textContent = `${seconds}`
 
-// Hide Input 
-inputContainer.hidden= true;
+
 
 // Show countdown 
 countdownEl.hidden = false;
