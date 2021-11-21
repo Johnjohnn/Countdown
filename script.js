@@ -94,6 +94,7 @@ clearInterval(countdownActive);
 // Reset values 
 countdownTitle  = "";
 countdownDate = "";
+localStorage.removeItem("countdown");
 }
 
 function restorePreviousCountdown () {
